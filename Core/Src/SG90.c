@@ -12,7 +12,7 @@ void Servo_Start(Servo_Name *servo)
 }
 void Spin_Open_servo(Servo_Name *servo)
 {
-    for(uint8_t duty=40;duty<=110;duty+=servo->speed)
+    for(uint8_t duty=50;duty<=100;duty+=servo->speed)
     {
         __HAL_TIM_SET_COMPARE(servo->timer,servo->CHANNEL,duty);
         HAL_Delay(100);
@@ -20,7 +20,7 @@ void Spin_Open_servo(Servo_Name *servo)
 }
 void Spin_Close_servo(Servo_Name *servo)
 {
-	for(uint8_t duty=90;duty>=20;duty-=servo->speed)
+	for(uint8_t duty=100;duty>=50;duty-=servo->speed)
 	{
 		__HAL_TIM_SET_COMPARE(servo->timer,servo->CHANNEL,duty);
 		HAL_Delay(100);

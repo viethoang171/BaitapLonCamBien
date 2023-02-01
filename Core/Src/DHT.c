@@ -50,7 +50,7 @@ int checkResponse(DHT_Name *DHT)
 {
 	int response = 0;
 	DHT_DelayUs(DHT, 40);
-	if (!DHT_ReadPin(DHT))
+	if (!DHT_ReadPin(DHT))// neu doc chan Pin bang 0 
 	{
 		DHT_DelayUs(DHT, 80);
 		if ((DHT_ReadPin(DHT)))
